@@ -62,11 +62,18 @@ with open('blocked_users.json', 'r') as blocked_users:
     users_list = json.load(blocked_users)
 logger.info("Loaded blocked users list: {} users".format(len(users_list)))
 
+def extract_wait_time(error_message):
+    """Extracts the wait time from the Reddit rate limit error message."""
+    match = re.search(r'Take a break for (\d+) minutes', error_message)
+    if match:
+        return int(match.group(1)) * 60  # Convert minutes to seconds
+    return None
+
 if __name__ == '__main__':
     while True:
         try:
             # Create the Reddit instance
-            reddit = praw.Reddit('bot1', ratelimit_seconds=500)
+            reddit = praw.Reddit('bot1')
             logger.info("Instantiated Reddit client")
 
             # Read the file into a list and remove any empty values
@@ -106,5 +113,11 @@ if __name__ == '__main__':
             logger.error("Keyboard termination received. Bye!")
             break
         except APIException as e:
-            logger.exception("PRAW Exception received: {}. Retrying...".format(str(vars(e))))
-            time.sleep(2) # sleep to retry in case of errors
+            # Extract the wait time from the error message
+            wait_time = extract_wait_time(str(e))
+            if wait_time:
+                logger.exception("Rate limit exceeded. Waiting for {} seconds before retrying...".format(wait_time))
+                time.sleep(wait_time)  # Wait for the extracted duration before retrying
+            else:
+                logger.exception("PRAW Exception received: {}. Retrying...".format(str(vars(e))))
+                time.sleep(2) # sleep to retry in case of errors
