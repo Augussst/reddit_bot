@@ -73,7 +73,7 @@ if __name__ == '__main__':
     while True:
         try:
             # Create the Reddit instance
-            reddit = praw.Reddit('bot1')
+            reddit = praw.Reddit('bot1', ratelimit_seconds=500)
             logger.info("Instantiated Reddit client")
 
             # Read the file into a list and remove any empty values
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         except APIException as e:
             # Extract the wait time from the error message
             wait_time = extract_wait_time(str(e))
-            if wait_time:
+            if wait_time is not None:
                 logger.exception("Rate limit exceeded. Waiting for {} seconds before retrying...".format(wait_time))
                 time.sleep(wait_time)  # Wait for the extracted duration before retrying
             else:
