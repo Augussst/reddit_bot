@@ -17,10 +17,10 @@ import praw.exceptions
 sys.path.insert(0, os.path.abspath('..'))
 
 # Local application imports
-from utils.core import get_env, get_username, is_keyword_mentioned, get_random_quote # bot standard functions
+from core import get_env, get_username, is_keyword_mentioned, get_random_quote # bot standard functions
 
 # validate all mandatory files exist before starting
-assert os.path.isfile('../utils/logging_config.ini') # Logs config file
+assert os.path.isfile('logging_config.ini') # Logs config file
 assert os.path.isfile('praw.ini')                   # PRAW config file
 assert os.path.isfile('.env')                       # environment variables file
 assert os.path.isfile('subs.json')                  # subreddits file
@@ -30,7 +30,7 @@ if not os.path.isfile('posts_replied_to.txt'):      # If record file does not ex
     open("posts_replied_to.txt", "w+")
 
 # Instantiate logging in accordance with config file
-fileConfig('../utils/logging_config.ini')
+fileConfig('logging_config.ini')
 logger = logging.getLogger('reddit')
 
 # Explicit start of the bot runtime

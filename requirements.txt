@@ -8,5 +8,4 @@ six==1.12.0
 update-checker==0.16
 urllib3==1.25.3
 websocket-client==0.56.0
-# Utils repository #
--r ../utils/requirements.txt
+python-dotenv==0.10.3
