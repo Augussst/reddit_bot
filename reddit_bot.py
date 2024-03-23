@@ -66,7 +66,7 @@ if __name__ == '__main__':
     while True:
         try:
             # Create the Reddit instance
-            reddit = praw.Reddit('bot1')
+            reddit = praw.Reddit('bot1', ratelimit_seconds=500)
             logger.info("Instantiated Reddit client")
 
             # Read the file into a list and remove any empty values
