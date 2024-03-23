@@ -1,7 +1,3 @@
-# Bobby B Bot - Reddit version
-[![Build Status](https://travis-ci.org/bobby-b-bot/reddit.svg?branch=master)](https://travis-ci.org/bobby-b-bot/reddit) ![GitHub release](https://img.shields.io/github/release/bobby-b-bot/reddit.svg) ![GitHub All Releases](https://img.shields.io/github/downloads/bobby-b-bot/reddit/total.svg) ![GitHub issues](https://img.shields.io/github/issues-raw/bobby-b-bot/reddit.svg) ![GitHub](https://img.shields.io/github/license/bobby-b-bot/reddit.svg) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/bobby_b_bot.svg?style=social) [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L814HD5)
-
-
 In this repository you can find the Reddit (and original) version of the Bobby B Bot.
 
 ## How to use it
@@ -53,7 +49,3 @@ $ source bin/activate
 1. Create and mantain a logging_config.ini file in utils folder for logging configuration ([see documentation](https://docs.python.org/3/library/logging.config.html#logging-config-fileformat));
 1. Run the bot (`python reddit_bot.py`).
 1. Have fun!
-
-## How to contribute
-
-Feature requests such as new quotes or more subreddits to run the bot on are welcome via issues on GitHub! Feel free to contribute. You can also contribute by donating via [Ko-fi](https://ko-fi.com/L3L814HD5) or [PayPal](http://paypal.me/FSZanettini) to keep the servers running. 
