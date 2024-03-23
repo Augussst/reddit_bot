@@ -1,11 +1,13 @@
-In this repository you can find the Reddit (and original) version of the Bobby B Bot.
+# Dr. Gregory House Bot for Reddit
+
+Forked and modified from [Bobby B Bot](https://github.com/bobby-b-bot).
 
 ## How to use it
 
 Simply write one of the [keywords](https://github.com/bobby-b-bot/utils/blob/master/triggers.json) (usually variations of the bot's name) in a comment in the [subreddits](subs.json) the bot is listening on, and the bot will reply with a random quote.
 
-* Only listens on mentioned subreddits to avoid spamming other subs. 
-* Always follow and comply with Reddit bot rules and best practices: [bottiquette](https://www.reddit.com/r/Bottiquette/wiki/bottiquette)
+- Only listens on mentioned subreddits to avoid spamming other subs.
+- Always follow and comply with Reddit bot rules and best practices: [bottiquette](https://www.reddit.com/r/Bottiquette/wiki/bottiquette)
 
 ## How to install
 
@@ -15,7 +17,7 @@ Simply write one of the [keywords](https://github.com/bobby-b-bot/utils/blob/mas
 ```
 + root
 └───+ reddit
-│     |-- praw.ini 
+│     |-- praw.ini
 │     |-- blocked_users.json
 │     |-- subs.json
 │     |-- reddit_bot.py
