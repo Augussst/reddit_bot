@@ -41,7 +41,7 @@ def is_keyword_mentioned(text):
     for keyword in keywords:
     
         # Do a case insensitive search
-        if re.search(keyword, text, re.IGNORECASE):
+        if re.fullmatch(keyword, text, re.IGNORECASE):
             return True
     
     return False
