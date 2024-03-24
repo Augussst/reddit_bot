@@ -39,9 +39,12 @@ def is_keyword_mentioned(text):
         keywords = json.load(triggers)
 
     for keyword in keywords:
-    
+        
+        # Modify the regular expression pattern to match "!house" followed by any character
+        pattern = re.compile(re.escape(keyword) + r'.*', re.IGNORECASE)
+        
         # Do a case insensitive search
-        if re.fullmatch(keyword, text, re.IGNORECASE):
+        if re.search(pattern, text):
             return True
     
     return False
